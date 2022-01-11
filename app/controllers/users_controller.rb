@@ -5,8 +5,9 @@ class UsersController < ApplicationController
     end
 
     def update
-      if current_user.update_attributes(user_params)
-        render :show
+      @user = User.find_by(id:current_user.id)
+      if @user.update(user_params)
+        render json: @user
       else
         render json: { errors: current_user.errors }, status: :unprocessable_entity
       end
@@ -15,6 +16,6 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:username, :email, :password, :first_name, :last_name, :mobile_number)
+        params.require(:user).permit(:email, :password, :first_name, :last_name, :mobile_number)
     end
 end

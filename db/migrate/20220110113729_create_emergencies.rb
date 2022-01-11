@@ -4,7 +4,7 @@ class CreateEmergencies < ActiveRecord::Migration[6.1]
       t.integer :user_id
       t.decimal :latitude
       t.decimal :longitude
-      t.string :string
+      t.string :emergency_type
       t.boolean :on_going
       t.timestamps
     end
