@@ -4,6 +4,7 @@ Rails.application.routes.draw do
                        path_names: { sign_in: :login }
 
     resource :user, only: [:show, :update]
+    resource :emergency
     resource :admin
     get 'people_in_emergency' => 'admin#people_in_emergency', as: :people_in_emergency
   end
