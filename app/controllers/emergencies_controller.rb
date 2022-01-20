@@ -6,7 +6,9 @@ class EmergenciesController < ApplicationController
             longitude: params[:longitude],
             latitude: params[:latitude],
             emergency_type: params[:emergency_type],
-            user_id: current_user.id
+            user_id: current_user.id,
+            first_name: current_user.first_name,
+            last_name: current_user.last_name
         )
         if @emergency.save
             render json: @emergency

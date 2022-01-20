@@ -5,7 +5,7 @@ class CreateEmergencies < ActiveRecord::Migration[6.1]
       t.decimal :latitude
       t.decimal :longitude
       t.string :emergency_type
-      t.boolean :on_going
+      t.boolean :on_going, default: true
       t.timestamps
     end
   end

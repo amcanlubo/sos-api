@@ -6,6 +6,6 @@ Rails.application.routes.draw do
     resource :user, only: [:show, :update]
     resource :emergency
     resource :admin
-    get 'people_in_emergency' => 'admin#people_in_emergency', as: :people_in_emergency
+    get 'people_in_emergency' => 'admins#people_in_emergency', as: :people_in_emergency
   end
 end
