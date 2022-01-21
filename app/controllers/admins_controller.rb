@@ -2,6 +2,22 @@ class AdminsController < ApplicationController
   
     before_action :is_admin
 
+    def user_date
+    end
+
+    def all_users
+        @users = User.where(is_admin: false)
+
+        render json: @users
+    end
+
+    def toggle_emergency
+        @emergency = Emergency.find(params[:id])
+        @emergency.update(on_going: false)
+
+        render json: {messsage: 'Success!'}
+    end
+
     def people_in_emergency
         @in_emergency = Emergency.where(on_going: true) 
         render json: @in_emergency
@@ -25,6 +41,12 @@ class AdminsController < ApplicationController
         else
             render json: { errors: "Error" }
         end
+    end
+
+    def delete
+        @user = User.find(params[:id]).destroy
+
+        render json: { message: 'User deleted'}
     end
 
     private

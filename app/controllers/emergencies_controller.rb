@@ -1,5 +1,11 @@
 class EmergenciesController < ApplicationController
     before_action :authenticate_user!
+
+    def all_emergencies
+        @emergencies = Emergency.where(on_going: false)
+
+        render json: @emergencies
+    end
  
     def create
         @emergency = Emergency.new(
