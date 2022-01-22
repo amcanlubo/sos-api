@@ -15,7 +15,7 @@ class AdminsController < ApplicationController
         @emergency = Emergency.find(params[:id])
         @emergency.update(on_going: false)
 
-        render json: {messsage: 'Success!'}
+        render json: {message: 'Success!'}
     end
 
     def people_in_emergency
@@ -30,16 +30,16 @@ class AdminsController < ApplicationController
         if @user.save
             render json: @user
         else
-            render json: { errors: 'Error!' }
+            render json: { errors: 'User was not created' }
         end
     end
 
     def update
         @user = User.find(params[:id])
         if @user.update(user_params)
-            render json: @user, message: "Account updated"
+            render json: @user, message: "User successfully updated"
         else
-            render json: { errors: "Error" }
+            render json: { errors: "Check errors" }
         end
     end
 

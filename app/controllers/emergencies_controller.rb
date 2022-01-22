@@ -17,9 +17,12 @@ class EmergenciesController < ApplicationController
             last_name: current_user.last_name
         )
         if @emergency.save
-            render json: @emergency
+            # render json: @emergency
+            ActionCable.server.broadcast 'emergencies_channel', @emergency
+            head :ok
         else
             render json: { errors: 'Error!' }
+            head :ok
         end
     end
 

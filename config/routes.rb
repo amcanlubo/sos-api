@@ -11,5 +11,7 @@ Rails.application.routes.draw do
     get 'all_users' => 'admins#all_users', as: :all_users
     patch 'toggle_emergency' => 'admins#toggle_emergency', as: :toggle_emergency
     delete 'delete/:id' => 'admins#delete', as: :delete
+
+    mount ActionCable.server => '/cable'
   end
 end 
