@@ -1,12 +1,11 @@
-
+require 'rest-client'
 module Gmaps
     class Request
-        
+
         TOKEN = 'AIzaSyAFhViEbvEh-VK4nq82EWmwcLFVk8Amwo4'
         BASE_URL = 'https://www.googleapis.com/geolocation/v1'
 
         def self.call(http_method, endpoint)
-            require 'rest-client'
             result = RestClient::Request.execute(
                 method: http_method,
                 url:"#{BASE_URL}#{endpoint}?key=#{TOKEN}",

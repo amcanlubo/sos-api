@@ -29,6 +29,8 @@ gem 'shoulda-matchers'
 gem 'devise-jwt'
 gem 'rack-cors'
 
+gem 'rest-client'
+
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
