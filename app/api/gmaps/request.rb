@@ -1,4 +1,5 @@
 require 'rest-client'
+
 module Gmaps
     class Request
 
