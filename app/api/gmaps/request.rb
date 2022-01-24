@@ -1,7 +1,7 @@
-require 'rest-client'
+
 module Gmaps
     class Request
-
+        require 'rest-client'
         TOKEN = 'AIzaSyAFhViEbvEh-VK4nq82EWmwcLFVk8Amwo4'
         BASE_URL = 'https://www.googleapis.com/geolocation/v1'
 
