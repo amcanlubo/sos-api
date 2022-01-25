@@ -113,6 +113,11 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { host: 'https://acsc-sos.herokuapp.com' }
+
+  config.action_cable.url = 'ws://https://acsc-sos.herokuapp.com/cable'
+  config.action_cable.allowed_request_origins = [ 'http://localhost:3000' ]
+
+
   # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.smtp_settings = {
     user_name:      ENV['SENDMAIL_USERNAME'],
